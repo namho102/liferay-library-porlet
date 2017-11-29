@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.lib.model.Author" />
+	<import class="com.lib.model.Book" />
+	<class name="com.lib.model.impl.AuthorImpl" table="NewLib_Author">
+		<id name="authorId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.lib.model.impl.BookImpl" table="NewLib_Book">
+		<id name="bookId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="imageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
