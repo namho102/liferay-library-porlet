@@ -13,6 +13,8 @@
 		<portlet-name>book</portlet-name>
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/tagify.css</header-portlet-css>
+		<header-portlet-javascript>/js/tagify.js</header-portlet-javascript>
 		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
 		<css-class-wrapper>book-portlet</css-class-wrapper>
 	</portlet>

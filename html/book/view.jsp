@@ -4,10 +4,13 @@
 <%@page import="com.lib.service.BookLocalServiceUtil"%>
 <%@page import="java.util.List"%>
 <%@ include file="init.jsp"%>
+<%@page import="javax.portlet.ActionRequest"%>
 
 <%
 PortletURL iteratorURL = renderResponse.createRenderURL();
 iteratorURL.setParameter("mvcPath", "/html/book/view.jsp");
+
+
 %>
 
 <liferay-ui:search-container delta="10" emptyResultsMessage="no-records-is-available"  deltaConfigurable="true" iteratorURL="<%=iteratorURL%>">
@@ -26,6 +29,7 @@ iteratorURL.setParameter("mvcPath", "/html/book/view.jsp");
 		<liferay-ui:search-container-column-text name="Image URL" property="imageUrl" />
 		<liferay-ui:search-container-column-text name="Category" property="category" />
 		<liferay-ui:search-container-column-jsp path="/html/book/show_authors.jsp" align="right" name="Authors"/>
+		<liferay-ui:search-container-column-jsp path="/html/book/delete_book.jsp" name=""/>
 	</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>

@@ -14,7 +14,6 @@
 <%
 	ResultRow currentRow = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 	Book book = (Book)currentRow.getObject();
-	System.out.println(book);
 
 	List<Author> bookAuthorsList = AuthorLocalServiceUtil.getBookAuthors(book.getBookId()); 
 
