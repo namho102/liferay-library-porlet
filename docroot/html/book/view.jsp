@@ -22,8 +22,16 @@ iteratorURL.setParameter("mvcPath", "/html/book/view.jsp");
 		%>
 	</liferay-ui:search-container-results>
 	<liferay-ui:search-container-row className="Book" keyProperty="bookId" modelVar="book"  rowVar="curRow" escapedModel="<%= true %>">
+		<liferay-portlet:renderURL varImpl="rowURL">
+				<portlet:param name="backURL" value="<%= currentURL %>" />
+				<portlet:param name="mvcPath" value="/html/book/update_book.jsp" />
+				<portlet:param name="redirect" value="<%= currentURL %>" />
+				<portlet:param name="bookId"
+					value="<%= String.valueOf(book.getBookId()) %>" />
+			</liferay-portlet:renderURL>
+			
 		<liferay-ui:search-container-column-text name="ID" property="bookId" />
-		<liferay-ui:search-container-column-text name="Title" property="title" />
+		<liferay-ui:search-container-column-text name="Title" property="title" href="<%= rowURL %>"/>
 		<liferay-ui:search-container-column-text name="Description" property="description" />
 		<liferay-ui:search-container-column-text name="Image URL" property="imageUrl" />
 		<liferay-ui:search-container-column-text name="Category" property="category" />

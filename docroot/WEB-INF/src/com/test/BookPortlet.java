@@ -84,8 +84,42 @@ public class BookPortlet extends MVCPortlet {
 	
 	public void deleteBook(ActionRequest actionRequest, ActionResponse actionResponse)	throws IOException, PortalException, SystemException {
 		long bookId = ParamUtil.getLong(actionRequest, "bookId");
-		System.out.println(bookId);
+//		System.out.println(bookId);
 		BookLocalServiceUtil.deleteBook(bookId);
 		actionResponse.setRenderParameter("mvcPath", "/html/book/view.jsp");
+	}
+	
+	public void updateBook(ActionRequest actionRequest, ActionResponse actionResponse)
+			throws IOException, PortletException, SystemException {
+		
+		long bookId = ParamUtil.getLong(actionRequest, "bookId");
+		String title = ParamUtil.getString(actionRequest, "title");
+		String description = ParamUtil.getString(actionRequest, "description");
+		String imageUrl = ParamUtil.getString(actionRequest, "imageUrl");
+		String category = ParamUtil.getString(actionRequest, "category");
+//		String authors = ParamUtil.getString(actionRequest, "authors");
+
+		Book book;
+		try {
+			book = BookLocalServiceUtil.getBook(bookId);
+			
+			if(book != null) {
+				book.setTitle(title);
+				book.setDescription(description);
+				book.setImageUrl(imageUrl);
+				book.setCategory(category);
+				
+				BookLocalServiceUtil.updateBook(book);
+				
+				actionResponse.setRenderParameter("mvcPath", "/html/book/view.jsp");
+			}
+			
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		actionResponse.setRenderParameter("mvcPath", "/html/book/view.jsp");
+
 	}
 }

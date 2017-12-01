@@ -37,14 +37,7 @@
 	    <aui:option value="Comics">Comics</aui:option>    
 	</aui:select>
 	
-<!-- 	
-	<div class="control-group input-text-wrapper">
-		<label class="control-label" > Authors </label>
-		<input name='authors' placeholder='write some authors' value='css, html, javascript, css'>
-	</div>
-	 -->
-	
-    	
+
 	<aui:button type="submit" name="" value="Submit"></aui:button>
 
 </aui:form>

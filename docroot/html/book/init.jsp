@@ -34,9 +34,12 @@ String description = ParamUtil.getString(request, "description");
 %>
 
 
-<aui:a href="<%=homeURL%>" label="Home"></aui:a>
-<aui:a href="<%=addBookUrl%>" label="Add Book"></aui:a>
-<aui:a href="<%=mapAuthorsToBookUrl%>" label="Map Authors to Book"></aui:a>
-<aui:a href="<%=searchUrl%>" label="Search"></aui:a>
+<div class="body_nav">
+	<aui:a href="<%=homeURL%>" label="Home"></aui:a>
+	<aui:a href="<%=addBookUrl%>" label="Add Book"></aui:a>
+	<aui:a href="<%=mapAuthorsToBookUrl%>" label="Map Authors to Book"></aui:a>
+	<aui:a href="<%=searchUrl%>" label="Search"></aui:a>
 <br/>
+	
+</div>
 
